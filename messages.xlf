@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="a566bd5fb1c5ef74a6a437677c88a65878f2758a" datatype="html">
+        <source>lol</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/loans/loans.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">@vlad</note>
+        <target state="new">Bonjour</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
