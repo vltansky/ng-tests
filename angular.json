@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "resources": {
+      "i18n": {
+        "locales": {
+          "en": {
+            "translation": "src/messages.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +32,6 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "i18nFile": "src/messages.xlf",
-            "i18nFormat": "xlf",
             "i18nLocale": "en",
             "assets": [
               "src/favicon.ico",
@@ -48,7 +55,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
