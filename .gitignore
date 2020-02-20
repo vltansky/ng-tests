@@ -45,6 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
 src/app/tests
-src/app/app-routing-module.ts
+src/app/app-routing.module.ts
