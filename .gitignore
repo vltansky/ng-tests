@@ -47,3 +47,4 @@ Thumbs.db
 
 
 src/app/tests
+src/app/app-routing-module.ts
