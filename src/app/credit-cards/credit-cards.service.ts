@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-const _data ={test:'vlad'};// import _data from './res.json';
+const _data = {test:'vlad'};
 @Injectable({
   providedIn: 'root'
 })

@@ -2,7 +2,8 @@
   "name": "resources",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "ng": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng",
+    "c": "node ./tools/content.js",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -12,15 +13,21 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.1",
+    "@angular/cdk": "^9.0.1",
     "@angular/common": "~9.0.1",
     "@angular/compiler": "~9.0.1",
     "@angular/core": "~9.0.1",
+    "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "~9.0.1",
     "@angular/localize": "~9.0.1",
     "@angular/platform-browser": "~9.0.1",
     "@angular/platform-browser-dynamic": "~9.0.1",
     "@angular/router": "~9.0.1",
+    "@ng-select/ng-select": "^3.7.2",
+    "bootstrap": "4.1.1",
     "css-vars-ponyfill": "^2.1.2",
+    "ngx-bootstrap": "^5.3.2",
+    "ngx-swiper-wrapper": "^9.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -34,6 +41,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "fast-glob": "^3.2.1",
+    "fs-extra": "^8.1.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -42,8 +52,10 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.5.2",
     "protractor": "^5.4.3",
+    "shelljs": "^0.8.3",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "webpack-visualizer-plugin": "^0.1.11"
   }
 }
