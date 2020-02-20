@@ -31,7 +31,8 @@ const routes: Routes = [
 { path: 'url26', loadChildren: () => import('./tests/module26/loans2.module').then(m => m.BulkTestModule) },
 { path: 'url27', loadChildren: () => import('./tests/module27/loans2.module').then(m => m.BulkTestModule) },
 { path: 'url28', loadChildren: () => import('./tests/module28/loans2.module').then(m => m.BulkTestModule) },
-{ path: 'url29', loadChildren: () => import('./tests/module29/loans2.module').then(m => m.BulkTestModule) }
+{ path: 'url29', loadChildren: () => import('./tests/module29/loans2.module').then(m => m.BulkTestModule) },
+{ path: 'url30', loadChildren: () => import('./tests/module30/loans2.module').then(m => m.BulkTestModule) }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
