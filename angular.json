@@ -4,14 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "resources": {
-      "i18n": {
-        "locales": {
-          "en": {
-            "translation": "src/messages.xlf",
-            "baseHref": ""
-          }
-        }
-      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
