@@ -1,7 +1,7 @@
 const fs = require("fs-extra");
 const glob = require("fast-glob");
 const path = require("path");
-const generateNum = 30;
+const generateNum = Number(process.argv[2]) || 30;
 (async() => {
     await fs.remove("./src/app/tests/");
     await fs.ensureDir("./src/app/tests/");

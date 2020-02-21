@@ -1,9 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input, Renderer2 } from '@angular/core';
 import { DataService, Person } from './data.service';
 import { Observable } from 'rxjs';
-import _data from './57.json';
+// import _data from './57.json';
+const _data = {vlad:'vlad'};
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
+import { ResourceService } from './resource.service';
 
 
 @Component({
@@ -16,11 +18,12 @@ export class Loans2Component implements OnInit {
   people$: Observable<Person[]>;
   selectedPersonId = '5a15b13c36e7a7f00cf0d7cb';
 
-  constructor(private renderer: Renderer2, private dataService: DataService) {
+  constructor(private renderer: Renderer2, private dataService: DataService, private rs: ResourceService) {
     console.log(this.data)
   }
   ngOnInit() {
       this.people$ = this.dataService.getPeople();
+      let s = this.rs.getKey('s');
   }
   data = _data;
 

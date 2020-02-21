@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng",
     "c": "node ./tools/content.js",
-    "start": "ng serve",
+    "start": "npm run c",
+    "poststart": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --aot --watch",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

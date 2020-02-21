@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { Loans2RoutingModule } from './loans2-routing.module';
 import { Loans2Component } from './loans2.component';
-// import { BrowserModule } from '@angular/platform-browser';
-
-// import { FlexLayoutModule } from '@angular/flex-layout';
-// // replace me sometime vlad
-// import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { SharedModule } from 'app/shared/shared.module';
+
+// import { BrowserModule } from '@angular/platform-browser';
+// import { FlexLayoutModule } from '@angular/flex-layout';
+// import { SwiperModule } from 'ngx-swiper-wrapper';
 // import { AccordionModule } from 'ngx-bootstrap';
 // import { AlertModule } from 'ngx-bootstrap';
 // import { NgSelectModule } from '@ng-select/ng-select';
