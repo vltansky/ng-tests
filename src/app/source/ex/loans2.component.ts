@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input, Renderer2 } from '@angular/core';
 import { DataService, Person } from './data.service';
 import { Observable } from 'rxjs';
-import _data from './57.json';
-// const _data = {vlad:'vlad'};
+// import _data from './57.json';
+const _data = {vlad:'vlad'};
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
 import { ResourceService } from './resource.service';
