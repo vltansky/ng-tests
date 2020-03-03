@@ -1,7 +1,6 @@
-<a routerLink="credit">credit</a><br>
-<a routerLink="loans">loans</a><br>
-<a routerLink="loans2">loans2</a><br>
+<a routerLink="original">Main</a><br>
 
+<a *ngFor="let link of links" [routerLink]="link.url">{{link.name}}</a><br>
 
 <router-outlet></router-outlet>
 

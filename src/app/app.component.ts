@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import cssVars from 'css-vars-ponyfill';
+import _links from './nav.config.json';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +9,7 @@ import cssVars from 'css-vars-ponyfill';
 export class AppComponent implements OnInit{
   title = 'resources';
   banking_site = 'igud';
+  links = _links;
 
 
   loadStyle(key){

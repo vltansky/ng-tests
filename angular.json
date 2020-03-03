@@ -13,18 +13,41 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "he-premium": {
+            "translation": "src/locale/messages.fr.xlf",
+            "baseHref": "/he-premium/"
+          },
+          "es": "src/locale/messages.es.xlf",
+          "he-corporate": "src/locale/3.xlf",
+          "he-vlad": "src/locale/4.xlf",
+          "he-smbprivate": "src/locale/5.xlf",
+          "he-oferiko": "src/locale/6.xlf",
+          "he-example": "src/locale/7.xlf",
+          "he-private": "src/locale/8.xlf",
+          "he-igud": "src/locale/9.xlf",
+          "he-igudsmb": "src/locale/10.xlf",
+          "he-smb": "src/locale/11.xlf",
+          "he-exampleo": "src/locale/12.xlf"
+        }
+      },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js",
+              "mergeStrategies": {
+                "externals": "replace"
+              }
+            },
             "outputPath": "dist/resources",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "i18nFile": "src/messages.xlf",
-            "i18nLocale": "en",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -64,6 +87,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "fr": {
+              "localize": ["fr"],
+              "outputPath": "dist/resources/corporate_he"
+            },
+            "es": {
+              "localize": ["es"],
+              "outputPath": "dist/resources/premium_he"
             }
           }
         },
@@ -75,6 +106,12 @@
           "configurations": {
             "production": {
               "browserTarget": "resources:build:production"
+            },
+            "fr": {
+              "browserTarget": "resources:build:fr"
+            },
+            "es": {
+              "browserTarget": "resources:build:es"
             }
           }
         },

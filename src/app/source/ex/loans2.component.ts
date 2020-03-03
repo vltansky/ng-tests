@@ -1,29 +1,62 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input, Renderer2 } from '@angular/core';
+import { Component, TemplateRef, OnInit, ChangeDetectionStrategy, ViewChild, Input, Renderer2 } from '@angular/core';
 import { DataService, Person } from './data.service';
 import { Observable } from 'rxjs';
-// import _data from './57.json';
+// import _data from './data_resource.json';
 const _data = {vlad:'vlad'};
 import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface, SwiperPaginationInterface } from 'ngx-swiper-wrapper';
-import { ResourceService } from './resource.service';
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ResourceService } from 'app/shared/resource.service';
+import { Base } from 'app/shared/base';
+import { LoggerService } from 'app/shared/logger.service';
+import { resourceComponent } from 'app/shared/resourceComponent';
 
 @Component({
   selector: 'app-loans2',
   templateUrl: './loans2.component.html',
   styleUrls: ['./loans2.component.scss'],
+  providers: [ResourceService]
 })
-export class Loans2Component implements OnInit {
+export class Loans2Component extends Base implements OnInit {
 
+  isCollapsed = false;
   people$: Observable<Person[]>;
   selectedPersonId = '5a15b13c36e7a7f00cf0d7cb';
+  modalRef: BsModalRef;
+  test;
 
-  constructor(private renderer: Renderer2, private dataService: DataService, private rs: ResourceService) {
-    console.log(this.data)
+  constructor(public resService: ResourceService,
+    private modalService: BsModalService,
+    private renderer: Renderer2,
+    private dataService: DataService,
+    private log: LoggerService) {
+    super(log, resService, 'res2');
+    console.log(this);
+    let test = $localize`:@@home.greetings:`;
+    console.log(test)
+    // console.log(this.data);
+    // console.log('now?');
+    // this.logger.debug("vlad the Debugger");
   }
-  ngOnInit() {
+
+  
+  // async getData(){
+  //   this.test = await this.resService.getKey("vlad");
+  // }
+
+ 
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+  // async loadResources(){
+  //   await this.resService.load("res2");
+  // }
+
+  onInit() {
+    console.log('oninit');
+      // this.resService.resourcePath = "res2";
+      this.test = this.resService.getKey('vlad.test.example');
       this.people$ = this.dataService.getPeople();
-      let s = this.rs.getKey('s');
   }
   data = _data;
 

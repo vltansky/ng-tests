@@ -1,7 +1,14 @@
 <!-- <p>loans2 works! {{getValue('vlad')}}</p> -->
+
+Test: {{test}}
+<br><br><br><br>
+<h1 i18n="@@home.greetings">Hello</h1>
+ <br><br><br>
+_____
 <div class="test">{{data[0]._id}}{{data[0].index}}{{data[0].guid}}
     vlad
 </div>
+<!-- {{ resService.getTranslation('key') | async }} -->
 <button (click)="changeBody()">Click!</button>
 
     <!-- {{runChangeDetection}}
@@ -81,3 +88,51 @@
         </div>
       </div>
       
+      <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+ 
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+<carousel>
+  <slide>
+    <img src="assets/images/nature/1.jpg" alt="first slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="assets/images/nature/2.jpg" alt="second slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="assets/images/nature/3.jpg" alt="third slide" style="display: block; width: 100%;">
+  </slide>
+</carousel>
+
+<accordion>
+  <accordion-group heading="Static Header">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+</accordion>
+
+<button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Toggle collapse
+</button>
+<hr>
+<div id="collapseBasic" [collapse]="isCollapsed">
+  <div class="well well-lg card card-block card-header">Some content</div>
+</div>
