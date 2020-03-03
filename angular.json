@@ -19,7 +19,7 @@
             "translation": "src/locale/messages.fr.xlf",
             "baseHref": "/he-premium/"
           },
-          "es": "src/locale/messages.es.xlf",
+          "es": "src/locale/corporate.xlf",
           "he-corporate": "src/locale/3.xlf",
           "he-vlad": "src/locale/4.xlf",
           "he-smbprivate": "src/locale/5.xlf",

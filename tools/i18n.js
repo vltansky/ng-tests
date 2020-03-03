@@ -1,36 +1,34 @@
 const fs = require("fs-extra");
 const glob = require("fast-glob");
-const path = require("path");
+const async = require("async");
+const sites = ['corporate', 'private'];
 
-(async() => {
-    const i18n_sources = await glob("./i18n/**.json");
-    const template = await fs.readFile("./i18n/source.xlf", "utf8");
-    for(const i18nFile of i18n_sources){
+class translator{
+    async init(){
+        console.time('test');
+        this.template = await fs.readFile("./i18n/source.xlf", "utf8");
+        // await async.map(sites, this.processBankingSite);
+        for(const banking_site of sites){
+            this.processBankingSite(banking_site);
+        }
+        console.timeEnd('test');
+    }
+     processBankingSite = async(banking_site) => {
+        const i18n_sources = await glob(`./i18n/**-${banking_site}.json`);
         let generatedCode = '';
-        const fileName = path.basename(i18nFile).replace('.json','');
-        const i18nJson = JSON.parse(await fs.readFile(i18nFile, "utf8"));
-        for(const key in i18nJson){
-            generatedCode += `
+        for(const i18nFile of i18n_sources){
+            // const fileName = path.basename(i18nFile).replace('.json','');
+            const i18nJson = JSON.parse(await fs.readFile(i18nFile, "utf8"));
+            for(const key in i18nJson){
+                generatedCode += `
         <trans-unit id="${key}">
             <target>${i18nJson[key]}</target>
         </trans-unit>`
+            }
+            await fs.writeFile(`./src/locale/${banking_site}.xlf`, this.template.replace('<$$REPLACE_BLOCK$$>', generatedCode));
         }
-        await fs.writeFile(`./src/locale/${fileName}.xlf`, template.replace('<$$REPLACE_BLOCK$$>', generatedCode));
-
+        console.log(banking_site+' done');
+        // cb(null, banking_site);
     }
-    // template.replace('<$$REPLACE_BLOCK$$>')
-    // console.log(generatedCode);
-    // await fs.remove("./src/app/tests/");
-    // await fs.ensureDir("./src/app/tests/");
-    // let routes = [];
-    // let nav = [];
-    // for(let i=1;i<=generateNum;i++){
-    //     nav.push({name: `name${i}`, url: `url${i}`});
-    //     routes.push(`{ path: 'url${i}', loadChildren: () => import('./tests/module${i}/loans2.module').then(m => m.BulkTestModule) }`)
-    // }
-    // const routesString = routes.join(",\n");
-    // console.log(nav.length);
-    // const routesCode = await fs.readFile("./src/app/routing-template.ts", "utf8");
-    // await fs.writeFile("./src/app/nav.config.json", JSON.stringify(nav));
-    // await fs.writeFile("./src/app/app-routing.module.ts", routesCode.replace("/*$REPLACE_ME$*/", routesString));
-})()
+}
+new translator().init();
