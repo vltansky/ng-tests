@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="fr" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-    <trans-unit id="home.greetings">
-      <source>Hello</source>
-      <target>Somebody else saying hello!</target>
-    </trans-unit>
+        <trans-unit id="testTranslation1">
+            <target>new example</target>
+        </trans-unit>
+        <trans-unit id="testTranslation2">
+            <target>not same value</target>
+        </trans-unit>
+        <trans-unit id="home.greetings">
+            <target>Bonjour</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>
