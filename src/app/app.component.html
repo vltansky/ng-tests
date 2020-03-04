@@ -1,6 +1,6 @@
-<a routerLink="original">Main</a><br>
-
-<a *ngFor="let link of links" [routerLink]="link.url">{{link.name}}</a><br>
+<a href="original" (click)="test($event);">Main</a><br>
+oferiko
+<!-- <a *ngFor="let link of links" [routerLink]="link.url" (click)="test();">{{link.name}}</a><br> -->
 
 <router-outlet></router-outlet>
 

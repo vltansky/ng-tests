@@ -10,7 +10,10 @@ export class AppComponent implements OnInit{
   title = 'resources';
   banking_site = 'igud';
   links = _links;
-
+test(e){
+  // e.preventDefaultdfgdc ();
+  console.log('teeest');
+}
 
   loadStyle(key){
     if (!document.getElementById(key)){

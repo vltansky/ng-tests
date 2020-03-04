@@ -32,3 +32,19 @@ class translator{
     }
 }
 new translator().init();
+
+// const fs = require("fs-extra");
+
+// (async() => {
+//     const sourceJSON = await fs.readFile("./jsons/original.json", "utf-8");
+//     const regex = /(?:\"|\')([^"]*)(?:\"|\')(?=:)(?:\:\s*)(?:\")?(true|false|[-0-9]+[\.]*[\d]*(?=,)|[0-9a-zA-Z\(\)\@\:\,\/\!\+\-\.\$\ \\\']*)(?:\")?/gmi;
+//     let res = '';
+//     while ((m = regex.exec(sourceJSON)) !== null) {
+//         // This is necessary to avoid infinite loops with zero-width matches
+//         if (m.index === regex.lastIndex) {
+//             regex.lastIndex++;
+//         }
+//         res += `<d>${m[1]}<d>\n<s>${m[2]}</s>\n`;
+//     }
+//     console.log(res);
+// })();
