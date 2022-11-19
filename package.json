@@ -14,7 +14,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.900.4",
+    "@angular-devkit/build-angular": "^15.0.0",
     "@angular/animations": "~9.0.1",
     "@angular/cdk": "^9.0.1",
     "@angular/common": "~9.0.1",
@@ -37,7 +37,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^9.0.0",
+    "@angular-builders/custom-webpack": "^9.2.0",
     "@angular/cli": "~9.0.2",
     "@angular/compiler-cli": "~9.0.1",
     "@angular/language-service": "~9.0.1",
